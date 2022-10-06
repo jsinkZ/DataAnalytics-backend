@@ -9,9 +9,10 @@ const port = '3000'
 const app = express()
 
 app.use(express.json())
+app.use(cors())
 
 // Роуты
-app.get('/companiesReady', (req, res) => {
+app.get('/companiesReady', async (req, res) => {
 	res.json(companiesReady)
 })
 
