@@ -16,7 +16,7 @@ app.get('/companiesReady', (req, res) => {
 })
 
 // Работа сервера
-app.listen(process.env.port || port, (err) => {
+app.listen(process.env.PORT || port, (err) => {
 	if (err) console.log(`[ERROR] ${err.name}`)
 	else console.log(`[STATUS] Server started at port: ${port}`)
 })
