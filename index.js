@@ -6,7 +6,7 @@ import cors from 'cors'
 import { companiesReady } from './utils/countingCash.js'
 
 // Настройка сервера
-const port = '3000'
+const port = '3333'
 const app = express()
 
 app.use(express.json())
