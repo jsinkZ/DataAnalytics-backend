@@ -1,5 +1,6 @@
 // Библиотеки
 import express from 'express'
+import cors from 'cors'
 
 // Чистая дата
 import { companiesReady } from './utils/countingCash.js'
