@@ -8,10 +8,10 @@ dataCompany['Справочник компаний'].forEach((company) => {
 		id: company.id,
 		name: company['Наименование'],
 		industry: company['Отрасль'],
-		pollCashValues: [],
-		revenueCashValues: [],
-		totalPollCash: 0,
-		totalRevenueCash: 0,
+		pollCashValues: [], // Массив значений доходов, нужен для вычисления медианы для poll (опрос)
+		revenueCashValues: [], // Массив значений доходов, нужен для вычисления медианы для revenue (офиц)
+		totalPollCash: 0, // Общая сумма доходов для poll (опрос)
+		totalRevenueCash: 0, // Общая сумма доходов для revenue (офиц)
 		avgPollCash: 0,
 		avgRevenueCash: 0,
 		medianPollCash: 0,
