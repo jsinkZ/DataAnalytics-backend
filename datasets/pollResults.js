@@ -30,7 +30,7 @@ dataPoll['Результаты опроса о доходах'].forEach((item) =
 			break
 	}
 
-	// Получение грязных данных для добавление в валидацию
+	// Получение грязных данных для добавления в валидацию
 	// if (companies.filter((company) => company.name === companyValidated)[0] == undefined) {
 	// 	console.log(item['Компания'])
 	// }
