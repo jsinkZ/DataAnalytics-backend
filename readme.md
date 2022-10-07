@@ -21,3 +21,9 @@ npm i
 npm start // Запуск
 npm run start:dev // Запуск в режиме разработки
 ```
+
+## Задеплоен на heroku
+
+```sh
+[https://dataanalytics-backend.herokuapp.com/companiesReady](https://dataanalytics-backend.herokuapp.com/companiesReady)
+```
