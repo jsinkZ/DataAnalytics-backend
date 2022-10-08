@@ -19,9 +19,6 @@ dataPoll['Результаты опроса о доходах'].forEach((item) =
 		case 'ФГУБ "Салют3"':
 			companyValidated = 'ФГУБ "Салют-3"'
 			break
-		case 'ООО "КБ-140':
-			companyValidated = 'ООО "КБ-14"'
-			break
 		case 'ООО "КБ-140"':
 			companyValidated = 'ООО "КБ-14"'
 			break
