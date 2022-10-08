@@ -22,6 +22,16 @@ npm start // Запуск
 npm run start:dev // Запуск в режиме разработки
 ```
 
+## Структура
+
+- `index.js сам сервер`
+- `data/ исходная дата`
+- `datasets/companies.js формирование массива компаний с нужными полями`
+- `datasets/pollResults.js формирование массива результатов по опросам и чистка данных`
+- `datasets/revenueResults.js формирование объекта результатов по оф. данным и чистках, вычисление данных`
+- `utils/countingCash.js подсчет всех денег, готовый результат`
+- `utils/median функция медианы`
+
 ## Задеплоен на heroku
 
 [https://dataanalytics-backend.herokuapp.com/companiesReady](https://dataanalytics-backend.herokuapp.com/companiesReady)
