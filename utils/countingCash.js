@@ -24,7 +24,7 @@ for (const [_, values] of Object.entries(usersCashStats)) {
 	thisCompany.totalRevenueCash += values.cash
 	thisCompany.avgRevenueCash = thisCompany.totalRevenueCash / thisCompany.revenueCashValues.length
 	thisCompany.medianRevenueCash = median(thisCompany.revenueCashValues)
-	thisCompany.minRevenueCash = Math.min(values.cash, thisCompany.maxRevenueCash)
+	thisCompany.minRevenueCash = Math.min(values.cash, thisCompany.minRevenueCash)
 	thisCompany.maxRevenueCash = Math.max(values.cash, thisCompany.maxRevenueCash)
 }
 
