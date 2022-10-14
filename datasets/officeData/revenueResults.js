@@ -1,4 +1,4 @@
-import dataRevenue from './../data/officeData/dataRevenue.json' assert { type: 'json' }
+import dataRevenue from './../../data/officeData/dataRevenue.json' assert { type: 'json' }
 
 const usersCashStats = {}
 

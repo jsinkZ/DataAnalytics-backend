@@ -7,6 +7,7 @@ const countMass = (P, T, Pkr, Tkr, R) => {
 	const m = v * Ro
 
 	return m
+	//return (0.1 * P) / (1 - 0.4723 * (P / Pkr) * ((T / Tkr) ^ -3.668) * R * T)
 }
 
 export default countMass

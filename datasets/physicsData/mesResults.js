@@ -1,10 +1,10 @@
 import dataMesRes from '../../data/physicsData/dataMesRes.json' assert { type: 'json' }
+import countMass from '../../utils/countMass.js'
+import gasReference from './gasReference.js'
+import noises from './sensNoise.js'
 
 const mesRes = dataMesRes['Результаты замеров']
 const data = []
-const gases = {}
-
-const dates = []
 
 mesRes.forEach((item) => {
 	data.push({
@@ -23,46 +23,61 @@ mesRes.forEach((item) => {
 	})
 })
 
+const dates = []
+const gases = {
+	Пропан: {},
+	Азот: {},
+}
+
+const pressureP = data[1]
+const tempP = data[2]
+const massP = data[3]
+const pressureA = data[4]
+const tempA = data[5]
+const massA = data[6]
+
 Object.entries(data[0]).map((date, index) => (index >= 4 ? dates.push(date[1]) : null))
 
-data.forEach((item, index) => {
-	if (index !== 0) {
-		// Создаем объект с конкретным газом
-		if (gases[item[1]] == undefined) {
-			gases[item[1]] = {}
-			dates.map((date) => (gases[item[1]][date] = []))
-		} else {
-			dates.map((date) => {
-				const group = []
+let currentIndex = 4
+let noiseIndex = 0
+dates.forEach((date) => {
+	const noiseTempP = noises['1'][date][0]
+	const noisePresP = noises['1'][date][1]
+	const noiseTempA = noises['2'][date][0]
+	const noisePresA = noises['2'][date][1]
 
-				Object.entries(item).map((itemInObj, indexInObj) => {
-					// itemInObj Категория замера и замер для каждой даты
-					console.log(itemInObj[1])
-					// if (indexInObj >= 3) {
-					// 	group.push(itemInObj[1])
-					// 	if (item[2] == 'Масса ресивера с газом, кг') {
-					// 	}
-					// 	console.log(item[2])
-					// 	//console.log(itemInObj[1])
-					// }
-				})
-				gases[item[1]][date].push(group)
-			})
-		}
-	}
+	const readyTempP = tempP[currentIndex] - noiseTempP
+	const readyPresP = pressureP[currentIndex] * 10e6 - noisePresP
+	const readyTempA = tempA[currentIndex] - noiseTempA
+	const readyPresA = pressureA[currentIndex] * 10e6 - noisePresA
+
+	gases['Пропан'][date] = [
+		massP[currentIndex] - massP[3],
+		readyTempP,
+		readyPresP,
+		countMass(readyPresP, readyTempP, gasReference[0].Pkr, gasReference[0].Tkr, gasReference[0].R),
+	] // id 1
+	gases['Азот'][date] = [
+		massA[currentIndex] - massA[3],
+		readyTempA,
+		readyPresA,
+		countMass(readyPresA, readyTempA, gasReference[1].Pkr, gasReference[1].Tkr, gasReference[1].R),
+	] // id 2
+	currentIndex++
+	noiseIndex++
 })
 
-// for (const [_, values] of Object.entries(gases)) {
-// 	console.log(_, values)
-// }
+export default gases
 
+console.log(gases)
+console.log(gasReference[1].Pkr)
 /* 
 
 * ПРОТОТИП
 
 const gases = {
     gas: {
-        date: [mass, temp, pressure]
+        date: [mass, temp, pressure, massByCalc]
         ...
     }
 }

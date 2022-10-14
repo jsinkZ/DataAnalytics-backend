@@ -1,4 +1,4 @@
-import dataPoll from './../data/officeData/dataPollResults.json' assert { type: 'json' }
+import dataPoll from './../../data/officeData/dataPollResults.json' assert { type: 'json' }
 
 const pollResults = []
 
