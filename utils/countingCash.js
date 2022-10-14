@@ -1,8 +1,8 @@
 // Получение очищенной data
-import companies from './../datasets/companies.js'
-import pollResults from './../datasets/pollResults.js'
-import usersCashStats from './../datasets/revenueResults.js'
-import { median } from './/median.js'
+import companies from '../datasets/officeData/companies.js'
+import pollResults from './../datasets/officeData/pollResults.js'
+import usersCashStats from './../datasets/officeData/revenueResults.js'
+import median from './/median.js'
 
 // Подсчет суммы для результатов по опросам (неоф)
 pollResults.forEach((item) => {

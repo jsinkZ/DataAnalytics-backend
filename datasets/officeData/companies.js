@@ -1,4 +1,4 @@
-import dataCompany from './../data/dataCompanyDirectory.json' assert { type: 'json' }
+import dataCompany from '../../data/officeData/dataCompanyDirectory.json' assert { type: 'json' }
 
 const companies = []
 const minCashValue = 10e10
