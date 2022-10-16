@@ -4,6 +4,7 @@ import cors from 'cors'
 
 // Чистая дата
 import { companiesReady } from './utils/countingCash.js'
+import { dispersions, gases } from './datasets/physicsData/mesResults.js'
 
 // Настройка сервера
 const port = '3333'
@@ -15,6 +16,10 @@ app.use(cors())
 // Роуты
 app.get('/companiesReady', async (req, res) => {
 	res.json(companiesReady)
+})
+
+app.get('/gassesReady', async (req, res) => {
+	res.json({ gases, dispersions })
 })
 
 // Работа сервера
