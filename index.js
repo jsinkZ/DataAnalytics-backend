@@ -18,7 +18,7 @@ app.get('/companiesReady', async (req, res) => {
 	res.json(companiesReady)
 })
 
-app.get('/gassesReady', async (req, res) => {
+app.get('/gasesReady', async (req, res) => {
 	res.json({ gases, dispersions })
 })
 
