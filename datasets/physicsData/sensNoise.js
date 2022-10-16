@@ -31,8 +31,8 @@ const tempA = data[4]
 
 let currentIndex = 0
 dates.forEach((date) => {
-	noises['1'][date] = [tempP[currentIndex], pressureP[currentIndex] * 10e6]
-	noises['2'][date] = [tempA[currentIndex], pressureA[currentIndex] * 10e6]
+	noises['1'][date] = [tempP[currentIndex], pressureP[currentIndex] * 10e5]
+	noises['2'][date] = [tempA[currentIndex], pressureA[currentIndex] * 10e5]
 	currentIndex++
 })
 

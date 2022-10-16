@@ -6,7 +6,7 @@ dataGasParams['Справочник параметров газа'].forEach((ite
 	gasReference.push({
 		id: item.id,
 		name: item['Наименование'],
-		Pkr: item['Критическое давление Pkr, МПа'] * 10e6,
+		Pkr: item['Критическое давление Pkr, МПа'] * 10e5,
 		Tkr: item['Критическая температура Tkr, К'],
 		R: item['Газовая постоянная'],
 	})
