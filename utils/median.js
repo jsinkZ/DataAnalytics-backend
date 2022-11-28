@@ -1,5 +1,5 @@
 const median = (arr) => {
-	const { length } = arr
+	const { length } = arr // Распаковка длины
 
 	arr.sort((a, b) => a - b)
 
